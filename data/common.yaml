@@ -1,1 +1,40 @@
---- {}
+---
+novnc::manage_packages: true
+novnc::packages_ensure: installed
+novnc::packages:
+  - novnc
+  - python3-websockify
+
+novnc::manage_service_config: true
+novnc::websockify_config_dir: /etc/websockify
+novnc::websockify_config_mode: '0640'
+novnc::websockify_token_plugin: ReadOnlyTokenFile
+novnc::websockify_token_source: /etc/websockify/tokens.cfg
+novnc::websockify_auth_plugin: ''
+novnc::websockify_auth_source: ''
+novnc::websockify_service_user: novnc
+novnc::websockify_service_group: novnc
+novnc::websockify_service_dynamicuser: false
+
+novnc::make_webserver_vnc_index: true
+novnc::webserver_novnc_location: /novnc
+novnc::webserver_vnc_index: /var/www/novnc_users_list.html
+
+# format is:
+# vnc_servers[session_name] = server:port
+novnc::vnc_servers: {}
+
+novnc::manage_service: true
+novnc::websockify_service_name: websockify.service
+novnc::websockify_service_ensure: running
+novnc::websockify_service_enable: true
+novnc::websockify_command: /usr/bin/websockify
+novnc::websockify_port: '::1:6080'
+novnc::websockify_webroot: /usr/share/novnc
+novnc::websockify_prefer_ipv6: false
+novnc::websockify_use_ssl: false
+novnc::websockify_use_ssl_only: false
+novnc::websockify_ssl_ca: /etc/websockify/server.ca
+novnc::websockify_ssl_cert: /etc/websockify/server.crt
+novnc::websockify_ssl_key: /etc/websockify/server.key
+
