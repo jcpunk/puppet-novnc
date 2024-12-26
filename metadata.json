@@ -4,7 +4,7 @@
   "author": "Pat Riehecky",
   "summary": "Install and configure novnc",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/jcpunk/puppet-novnc",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
