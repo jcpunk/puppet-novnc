@@ -21,15 +21,15 @@ Install and setup noVNC along with websockify.
 
 This will will try to setup the non-webserver parts of a noVNC site.
 
-
 ### Setup Requirements **OPTIONAL**
 
 You are expected to setup the actual VNC server yourself.
 
+You are expected to setup the actual webserver yourself.
+
 ### Beginning with novnc
 
 ## Usage
-
 
 ```puppet
 class { 'novnc': }
@@ -41,6 +41,8 @@ novnc::vnc_servers:
   session_name: server:port
   other_session_name: server:otherport
 ```
+
+The `novnc::make_webserver_vnc_index` parameter will generate a very simple index page at `novnc::webserver_vnc_index` using the `novnc::webserver_novnc_location` for the link targets.
 
 ## Limitations
 
