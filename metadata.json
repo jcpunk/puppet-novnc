@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "source": "https://github.com/jcpunk/puppet-novnc",
   "project_page": "https://github.com/jcpunk/puppet-novnc",
-  "issues_url": ""https://github.com/jcpunk/puppet-novnc/issues",
+  "issues_url": "https://github.com/jcpunk/puppet-novnc/issues",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
